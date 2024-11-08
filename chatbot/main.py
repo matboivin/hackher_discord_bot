@@ -20,10 +20,7 @@ def parse_args() -> Namespace:
 
     """
     parser: ArgumentParser = ArgumentParser(
-        description=(
-            "Training resources Discord bot. Set BOT_TOKEN and SERVER_ID in "
-            ".env."
-        )
+        description=("Discord bot to index training resources.")
     )
 
     parser.add_argument(
@@ -61,7 +58,7 @@ def main() -> None:
     try:
         init_db_connection(args.database_file)
         bot = BotClient(
-            bot_token,  # type: ignore
+            bot_token,
             int(server_id),  # type: ignore
             int(roles_message_id),  # type: ignore
         )

@@ -45,7 +45,7 @@ Discord bot for our CTF team server.
 ```
 chatbot [-h] [-d] [-f filename.db]
 
-Training resources Discord bot. Set BOT_TOKEN and SERVER_ID in .env.
+Discord bot to index training resources.
 
 options:
   -h, --help            show this help message and exit
@@ -76,4 +76,4 @@ options:
 
 ## Contributing
 
-If you want to contribute to the bot's development, please refer to [CONTRIBUTING.md](CONTRIBUTING.md).
+If you want to contribute to the bot's development, please refer to [CONTRIBUTING.md](doc/CONTRIBUTING.md).
