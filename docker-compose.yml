@@ -1,0 +1,20 @@
+# Docker compose file for Production
+version: '3'
+
+services:
+  bot:
+    image: chatbot
+    container_name: chatbot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure:3
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+      BOT_LOGS_CHANNEL_ID: ${BOT_LOGS_CHANNEL_ID}
+      ROLES_MESSAGE_ID: ${ROLES_MESSAGE_ID}
+      SERVER_ID: ${SERVER_ID}
+      TZ: Europe/Paris
+    volumes:
+      - ./logs:/app/logs
+    command: ["chatbot", "-f", "${DATABASE_PATH}"]

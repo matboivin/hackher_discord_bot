@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "chatbot"
+version = "1.0.0"
+description = "Discord bot to index training resources."
+authors = ["mboivin <mboivin@student.42.fr>"]
+maintainers = []
+readme = "README.md"
+classifiers = [
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities"
+]
+packages = [
+    { include = "chatbot" },
+    { include = "helpers" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiohttp = "^3.10.5"
+coloredlogs = "^15.0.1"
+discord-py = "^2.4.0"
+python-dotenv = "^1.0.1"
+rich = "^13.8.0"
+verboselogs = "^1.7"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.8.0"
+pycodestyle = "^2.12.1"
+
+[tool.poetry.scripts]
+chatbot = 'chatbot.main:main'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

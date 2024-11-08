@@ -1,0 +1,18 @@
+# syntax=docker/dockerfile:1
+# For Raspberry Pi.
+FROM python:3.10-alpine3.16 as builder
+
+ENV TZ=Europe/Paris \
+    PYTHONUNBUFFERED=1 \
+    PYTHONPATH="/app"
+
+WORKDIR /app
+
+COPY dist/ chatbot/
+
+RUN apk update && apk add --update --no-cache build-base \
+    && pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir --find-links ./chatbot chatbot \
+    && mkdir logs
+
+CMD ["chatbot", "-d"]

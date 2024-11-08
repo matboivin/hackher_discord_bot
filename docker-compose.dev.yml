@@ -1,0 +1,4 @@
+# Docker compose file for Development
+services:
+  bot:
+    command: ["chatbot", "--debug", "-f", "${DATABASE_PATH}"]
