@@ -19,7 +19,7 @@ Follow this guide if you want to develop a new feature or modify the bot's code.
 
    ```sh
    COMPOSE_PROJECT_NAME=  # Name of the project
-   COMPOSE_FILE=docker-compose.dev.yml
+   COMPOSE_FILE=docker-compose.yml:docker-compose.dev.yml
    BOT_TOKEN=  # Token of the Telegram bot
    DATABASE_PATH=  # Path to the SQLite file
    SERVER_ID=  # ID of the Discord server (aka guild ID)
