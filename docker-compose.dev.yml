@@ -1,4 +1,12 @@
 # Docker compose file for Development
 services:
   bot:
-    command: ["chatbot", "--debug", "-f", "${DATABASE_PATH}"]
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./chatbot:/app/chatbot
+      - ./pyproject.toml:/app/pyproject.toml
+      - ./poetry.lock:/app/poetry.lock
+      - ./.pre-commit-config.yaml:/app/.pre-commit-config.yaml
+    command: ["tail", "-f", "/dev/null"]  # Run the container indefinitely

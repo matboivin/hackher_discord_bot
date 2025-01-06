@@ -25,9 +25,10 @@ Discord bot for our CTF team server.
 2. Set the environment variables in a `.env` file:
 
    ```sh
+   TIMEZONE=
    COMPOSE_PROJECT_NAME=  # Name of the project
    COMPOSE_FILE=docker-compose.yml
-   BOT_TOKEN=  # Token of the Telegram bot
+   BOT_TOKEN=  # Token of the Discord bot
    DATABASE_PATH=  # Path to the SQLite file
    SERVER_ID=  # ID of the Discord server (aka guild ID)
    BOT_LOGS_CHANNEL_ID=  # ID of the channel where to log bot actions
